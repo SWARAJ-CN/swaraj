@@ -128,7 +128,7 @@ export default function HeroSection() {
             <div className="relative z-10 rotate-2 border-4 border-neutral-950 bg-white p-3 shadow-[10px_10px_0_0_#0b0b0b] transition-transform duration-300 hover:rotate-0">
               <div className="relative aspect-[4/5] overflow-hidden">
                 <Image
-                  src="/asset/WhatsApp Image 2026-03-06 at 1.05.30 PM (1).webp"
+                  src="/asset/Monochrome Paper-Cutout Portrait.png"
                   fill
                   sizes="(max-width: 768px) 340px, 420px"
                   alt="Swaraj CN"
