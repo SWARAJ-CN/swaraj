@@ -1,4 +1,4 @@
-import "../styles/style.css";
+import "./globals.css";
 
 export const metadata = {
   title: "swaraj cn",
@@ -19,16 +19,10 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Quintessential&family=Rouge+Script&family=Molle:ital@1&display=swap"
           rel="stylesheet"
         />
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        />
-        <link
-          rel="stylesheet"
-          href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css"
-        />
       </head>
-      <body>{children}</body>
+      <body className="scroll-smooth bg-[#fbfdff] font-[Inter] leading-6 text-[#1a2b3e]">
+        {children}
+      </body>
     </html>
   );
 }
