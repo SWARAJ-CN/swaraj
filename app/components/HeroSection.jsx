@@ -8,6 +8,244 @@ export default function HeroSection() {
       id="home"
       className="relative overflow-hidden bg-[#f4f1ea] px-6 pt-14 pb-24 md:px-8 md:pt-20 md:pb-28"
     >
+      {/* ============================================================
+          MINI CSS HUMAN — styles (scoped, decorative, non-invasive)
+         ============================================================ */}
+      <style>{`
+        .mh-root, .mh-root * { box-sizing: border-box; }
+
+        .mh-scale { width: 120px; height: 168px; }
+
+        .mh-stage {
+          position: relative;
+          width: 400px;
+          height: 560px;
+          transform: scale(0.3);
+          transform-origin: top left;
+        }
+
+        .mh-shadow {
+          position: absolute;
+          left: 95px; top: 496px;
+          width: 210px; height: 26px;
+          border-radius: 50%;
+          background: rgba(11, 11, 11, 0.22);
+          filter: blur(6px);
+          animation: mh-shadow 3s ease-in-out infinite;
+        }
+
+        .mh-person {
+          position: absolute;
+          inset: 0;
+          animation: mh-bob 3s ease-in-out infinite;
+        }
+
+        @keyframes mh-bob {
+          0%, 100% { transform: translateY(0); }
+          50%      { transform: translateY(-7px); }
+        }
+        @keyframes mh-shadow {
+          0%, 100% { transform: scale(1);    opacity: 0.9; }
+          50%      { transform: scale(0.94); opacity: 0.6; }
+        }
+
+        /* ---------- legs ---------- */
+        .mh-leg {
+          position: absolute;
+          top: 312px;
+          width: 42px; height: 166px;
+          border-radius: 21px 21px 14px 14px;
+          background: #34d399;
+          box-shadow: inset 0 0 0 7px #0b0b0b;
+          z-index: 1;
+        }
+        .mh-leg.mh-l { left: 147px; }
+        .mh-leg.mh-r { left: 211px; }
+
+        /* ---------- shoes ---------- */
+        .mh-shoe {
+          position: absolute;
+          top: 462px;
+          width: 62px; height: 34px;
+          border-radius: 16px 16px 14px 14px;
+          background: #0b0b0b;
+          z-index: 2;
+        }
+        .mh-shoe.mh-l { left: 137px; }
+        .mh-shoe.mh-r { left: 201px; }
+
+        /* ---------- hair (behind head) ---------- */
+        .mh-hair-back {
+          position: absolute;
+          left: 141px; top: 26px;
+          width: 118px; height: 118px;
+          border-radius: 50%;
+          background: #0b0b0b;
+          z-index: 1;
+        }
+
+        /* ---------- neck ---------- */
+        .mh-neck {
+          position: absolute;
+          left: 183px; top: 128px;
+          width: 34px; height: 46px;
+          background: #ffd9b3;
+          z-index: 1;
+        }
+
+        /* ---------- arms ---------- */
+        .mh-arm {
+          position: absolute;
+          top: 180px;
+          width: 32px; height: 148px;
+          border-radius: 16px;
+          background: #fde047;
+          box-shadow: inset 0 0 0 7px #0b0b0b;
+          transform-origin: 50% 0;
+          z-index: 1;
+        }
+        .mh-arm.mh-l { left: 117px; transform: rotate(7deg); }
+        .mh-arm.mh-r { left: 251px; animation: mh-wave 4s ease-in-out infinite; }
+
+        .mh-arm::after {
+          content: "";
+          position: absolute;
+          left: 50%; bottom: -16px;
+          width: 30px; height: 30px;
+          margin-left: -15px;
+          border-radius: 50%;
+          background: #ffd9b3;
+          box-shadow: inset 0 0 0 7px #0b0b0b;
+        }
+
+        @keyframes mh-wave {
+          0%   { transform: rotate(-8deg);   }
+          15%  { transform: rotate(-8deg);   }
+          30%  { transform: rotate(-138deg); }
+          40%  { transform: rotate(-122deg); }
+          50%  { transform: rotate(-138deg); }
+          60%  { transform: rotate(-122deg); }
+          75%  { transform: rotate(-138deg); }
+          90%  { transform: rotate(-8deg);   }
+          100% { transform: rotate(-8deg);   }
+        }
+
+        /* ---------- torso ---------- */
+        .mh-torso {
+          position: absolute;
+          left: 135px; top: 158px;
+          width: 130px; height: 170px;
+          border-radius: 42px 42px 22px 22px;
+          background: #fde047;
+          box-shadow: inset 0 0 0 7px #0b0b0b;
+          z-index: 2;
+        }
+        .mh-torso::after {
+          content: "";
+          position: absolute;
+          left: 50%; top: 52px;
+          width: 10px; height: 10px;
+          margin-left: -5px;
+          border-radius: 50%;
+          background: #0b0b0b;
+          box-shadow: 0 34px 0 #0b0b0b, 0 68px 0 #0b0b0b;
+        }
+
+        /* ---------- shoulder caps ---------- */
+        .mh-shoulder {
+          position: absolute;
+          top: 158px;
+          width: 44px; height: 44px;
+          border-radius: 50%;
+          background: #fde047;
+          box-shadow: inset 0 0 0 7px #0b0b0b;
+          z-index: 3;
+        }
+        .mh-shoulder.mh-l { left: 111px; }
+        .mh-shoulder.mh-r { left: 245px; }
+
+        /* ---------- head ---------- */
+        .mh-head {
+          position: absolute;
+          left: 148px; top: 34px;
+          width: 104px; height: 112px;
+          border-radius: 50%;
+          background: #ffd9b3;
+          box-shadow: inset 0 0 0 7px #0b0b0b;
+          z-index: 3;
+        }
+        /* fringe */
+        .mh-head::before {
+          content: "";
+          position: absolute;
+          left: 6px; right: 6px; top: 6px;
+          height: 34px;
+          border-radius: 46px 46px 30px 30px / 38px 38px 18px 18px;
+          background: #0b0b0b;
+        }
+
+        .mh-brow {
+          position: absolute;
+          top: 46px;
+          width: 18px; height: 4px;
+          border-radius: 4px;
+          background: #0b0b0b;
+        }
+        .mh-brow.mh-l { left: 20px; transform: rotate(-5deg); }
+        .mh-brow.mh-r { left: 66px; transform: rotate(5deg);  }
+
+        .mh-eye {
+          position: absolute;
+          top: 58px;
+          width: 12px; height: 14px;
+          border-radius: 50%;
+          background: #0b0b0b;
+          animation: mh-blink 4.5s infinite;
+        }
+        .mh-eye.mh-l { left: 22px; }
+        .mh-eye.mh-r { left: 70px; }
+
+        .mh-eye::after {
+          content: "";
+          position: absolute;
+          top: 3px; left: 3px;
+          width: 5px; height: 5px;
+          border-radius: 50%;
+          background: #ffffff;
+        }
+
+        @keyframes mh-blink {
+          0%, 92%, 100% { transform: scaleY(1);   }
+          95%           { transform: scaleY(0.1); }
+        }
+
+        .mh-cheek {
+          position: absolute;
+          top: 74px;
+          width: 18px; height: 11px;
+          border-radius: 50%;
+          background: rgba(244, 114, 100, 0.45);
+          filter: blur(1.5px);
+        }
+        .mh-cheek.mh-l { left: 10px; }
+        .mh-cheek.mh-r { left: 76px; }
+
+        .mh-mouth {
+          position: absolute;
+          left: 32px; top: 80px;
+          width: 40px; height: 18px;
+          border-bottom: 4px solid #0b0b0b;
+          border-radius: 0 0 40px 40px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .mh-person, .mh-shadow, .mh-arm.mh-r, .mh-eye {
+            animation: none !important;
+          }
+          .mh-arm.mh-r { transform: rotate(-8deg); }
+        }
+      `}</style>
+
       {/* subtle grid backdrop */}
       <div
         aria-hidden
@@ -18,6 +256,52 @@ export default function HeroSection() {
           backgroundSize: "44px 44px",
         }}
       />
+
+      {/* ============================================================
+          MINI CSS HUMAN — markup (bottom-right, decorative)
+         ============================================================ */}
+      <div
+        aria-hidden
+        className="mh-root pointer-events-none absolute right-6 bottom-4 z-0 hidden select-none lg:block"
+      >
+        <div className="mh-scale">
+          <div className="mh-stage">
+            <div className="mh-shadow" />
+
+            <div className="mh-person">
+              {/* legs + shoes */}
+              <div className="mh-leg mh-l" />
+              <div className="mh-leg mh-r" />
+              <div className="mh-shoe mh-l" />
+              <div className="mh-shoe mh-r" />
+
+              {/* hair + neck */}
+              <div className="mh-hair-back" />
+              <div className="mh-neck" />
+
+              {/* arms */}
+              <div className="mh-arm mh-l" />
+              <div className="mh-arm mh-r" />
+
+              {/* body */}
+              <div className="mh-torso" />
+              <div className="mh-shoulder mh-l" />
+              <div className="mh-shoulder mh-r" />
+
+              {/* head */}
+              <div className="mh-head">
+                <div className="mh-brow mh-l" />
+                <div className="mh-brow mh-r" />
+                <div className="mh-eye mh-l" />
+                <div className="mh-eye mh-r" />
+                <div className="mh-cheek mh-l" />
+                <div className="mh-cheek mh-r" />
+                <div className="mh-mouth" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div className="relative mx-auto max-w-7xl">
         {/* top meta row */}
