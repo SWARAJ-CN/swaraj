@@ -8,9 +8,7 @@ export default function HeroSection() {
       id="home"
       className="relative overflow-hidden bg-[#f4f1ea] px-6 pt-14 pb-24 md:px-8 md:pt-20 md:pb-28"
     >
-      {/* ============================================================
-          MINI CSS HUMAN — styles (scoped, decorative, non-invasive)
-         ============================================================ */}
+    
       <style>{`
         .mh-root, .mh-root * { box-sizing: border-box; }
 
@@ -364,7 +362,7 @@ export default function HeroSection() {
 
             {/* small descriptive copy */}
             <p className="mb-9 max-w-lg text-sm leading-relaxed text-neutral-600 sm:text-base">
-              21 — full-stack developer focused on Next.js and MERN. Obsessed with
+              Full-stack developer focused on Next.js and MERN. Obsessed with
               UI craft, Linux internals, and security-first engineering.
             </p>
 
